@@ -1,9 +1,19 @@
 <div class="container">
     
         
-        <h3>List of orders</h3>
+        <h3>List of orders 
+        <?php if (isset($product_id)) 
+                echo htmlspecialchars(" including: " . $productname[0]->manufacturer ." ". $productname[0]->name) ?>
+                    
+        </h3>
+
+
+
         <table>
             <thead style="background-color: #ddd; font-weight: bold;">
+            
+                
+
             <tr>
                 <td>Order Id</td>
                 <td>Customer Name</td>
@@ -21,7 +31,8 @@
                     
                 </tr>
             <?php } ?>
-            </tbody>
+
+                        </tbody>
         </table>
 
 </div>

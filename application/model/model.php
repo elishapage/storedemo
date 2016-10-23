@@ -84,5 +84,23 @@ class Model
         return $query->fetchAll();
     }
 
+
+      public function getAllOrdersByProduct($product_id)
+    {
+        $sql = "SELECT `orders`.`order_id`, `customer`.`customer_name`, `orders`.`time_ordered`
+FROM `customer` LEFT JOIN `orders` ON `orders`.`customer_id` = `customer`.`customer_id` LEFT JOIN `order_items` ON `order_items`.`order_id` = `orders`.`order_id` LEFT JOIN `products` ON `order_items`.`product_id` = `products`.`id` WHERE products.id=$product_id";
+        $query = $this->db->prepare($sql);
+        $query->execute();
+        return $query->fetchAll();
+    }
+
+    public function getProductName($product_id)
+    {
+       $sql = "SELECT id, name, manufacturer, price FROM products WHERE id=$product_id";
+        $query = $this->db->prepare($sql);
+        $query->execute();
+        return $query->fetchAll();
+    }
+
     
 }

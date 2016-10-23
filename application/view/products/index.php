@@ -27,12 +27,13 @@
                     </td>
                     <td><a href="<?php echo URL . 'products/deleteproduct/' . htmlspecialchars($product->id, ENT_QUOTES, 'UTF-8'); ?>">delete</a></td>
                     <td><a href="<?php echo URL . 'products/editproduct/' . htmlspecialchars($product->id, ENT_QUOTES, 'UTF-8'); ?>">edit</a></td>
-                    <td><a href="<?php echo URL . 'products/seeorders/' . htmlspecialchars($product->id, ENT_QUOTES, 'UTF-8'); ?>">see orders</a></td>
+                    <td><a href="<?php echo URL . 'orders/ordersbyproduct/' . htmlspecialchars($product->id, ENT_QUOTES, 'UTF-8'); ?>">see orders</a></td>
+
                 </tr>
             <?php } ?>
             </tbody>
         </table>
-
+    
          <div class="box">
         <h3>Add a product</h3>
         <form action="<?php echo URL; ?>products/addproduct" method="POST">

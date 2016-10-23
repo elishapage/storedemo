@@ -42,8 +42,6 @@
                 </tr>
             <?php } ?>
 
-            <!-- <?php print_r($orderinfo) ?> -->
-           
                 
 
             
