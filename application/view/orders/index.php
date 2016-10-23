@@ -3,21 +3,20 @@
         
         <h3>List of orders 
         <?php if (isset($product_id)) 
-                echo htmlspecialchars(" including: " . $productname[0]->manufacturer ." ". $productname[0]->name) ?>
+                echo(" including: " . $productname[0]->manufacturer ." ". $productname[0]->name) ?>
                     
         </h3>
 
 
 
-        <table>
-            <thead style="background-color: #ddd; font-weight: bold;">
-            
-                
-
+        <table class="table table-striped table-hover table-condensed">
+            <thead>
             <tr>
-                <td>Order Id</td>
-                <td>Customer Name</td>
-                <td>Time Ordered</td>
+                <th>Order Id</th>
+                <th>Customer Name</th>
+                <th>Time Ordered</th>
+                <th>Order Details</th>
+
                
             </tr>
             </thead>
@@ -27,7 +26,7 @@
                     <td><?php if (isset($order->order_id)) echo htmlspecialchars($order->order_id, ENT_QUOTES, 'UTF-8'); ?></td>
                     <td><?php if (isset($order->customer_name)) echo htmlspecialchars($order->customer_name, ENT_QUOTES, 'UTF-8'); ?></td>
                     <td><?php if (isset($order->time_ordered)) echo htmlspecialchars($order->time_ordered, ENT_QUOTES, 'UTF-8'); ?></td>
-                   <td><a href="<?php echo URL . 'orderitems/index/' . htmlspecialchars($order->order_id, ENT_QUOTES, 'UTF-8'); ?>">see order</a></td>
+                   <td><a href="<?php echo URL . 'orderitems/index/' . htmlspecialchars($order->order_id, ENT_QUOTES, 'UTF-8'); ?>"><span class="label label-info">See Order</span></a></td>
                     
                 </tr>
             <?php } ?>

@@ -1,11 +1,11 @@
 <div class="container">
     
-        <table>
-            <thead style="background-color: #ddd; font-weight: bold;">
+        <table class="table table-striped table-hover table-condensed">
+            <thead>
             <tr>
-                <td>Order ID</td>
-                <td>Customer Name</td>
-                <td>Date Ordered</td>
+                <th>Order ID</th>
+                <th>Customer Name</th>
+                <th>Date Ordered</th>
                 
                
             </tr>
@@ -20,12 +20,12 @@
            </tbody>
         </table>    
         
-        <table>
-            <thead style="background-color: #ddd; font-weight: bold;">
+        <table class="table table-striped table-hover table-condensed">
+            <thead>
             <tr>
-                <td>Product</td>
-                <td>Manufacturer</td>
-                <td>Quantity</td>
+                <th>Product</th>
+                <th>Manufacturer</th>
+                <th>Quantity</th>
                 
                
             </tr>

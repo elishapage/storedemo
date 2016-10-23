@@ -2,16 +2,16 @@
     
         
         <h3>List of products</h3>
-        <table>
-            <thead style="background-color: #ddd; font-weight: bold;">
+        <table class="table table-striped table-hover table-condensed">
+            <thead>
             <tr>
-                <td>Id</td>
-                <td>Name</td>
-                <td>Manufacturer</td>
-                <td>Price</td>
-                <td>DELETE</td>
-                <td>EDIT</td>
-                <td>See Orders</td>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Manufacturer</th>
+                <th>Price</th>
+                <th>Delete</th>
+                <th>Edit</th>
+                <th>See Orders</th>
             </tr>
             </thead>
             <tbody>
@@ -25,25 +25,36 @@
                             <?php echo "$".htmlspecialchars($product->price, ENT_QUOTES, 'UTF-8'); ?></a>
                         <?php } ?>
                     </td>
-                    <td><a href="<?php echo URL . 'products/deleteproduct/' . htmlspecialchars($product->id, ENT_QUOTES, 'UTF-8'); ?>">delete</a></td>
-                    <td><a href="<?php echo URL . 'products/editproduct/' . htmlspecialchars($product->id, ENT_QUOTES, 'UTF-8'); ?>">edit</a></td>
-                    <td><a href="<?php echo URL . 'orders/ordersbyproduct/' . htmlspecialchars($product->id, ENT_QUOTES, 'UTF-8'); ?>">see orders</a></td>
+                    <td><a href="<?php echo URL . 'products/deleteproduct/' . htmlspecialchars($product->id, ENT_QUOTES, 'UTF-8'); ?>"> <span class="label label-danger">Delete</span></a></td>
+                    <td><a href="<?php echo URL . 'products/editproduct/' . htmlspecialchars($product->id, ENT_QUOTES, 'UTF-8'); ?>"><span class="label label-primary">Edit</span></a></td>
+                    <td><a href="<?php echo URL . 'orders/ordersbyproduct/' . htmlspecialchars($product->id, ENT_QUOTES, 'UTF-8'); ?>"><span class="label label-info">See Orders</span></a></td>
 
                 </tr>
             <?php } ?>
             </tbody>
         </table>
     
-         <div class="box">
+        
         <h3>Add a product</h3>
-        <form action="<?php echo URL; ?>products/addproduct" method="POST">
-            <label>Name</label>
-            <input type="text" name="name" value="" required />
-            <label>Manufacturer</label>
-            <input type="text" name="manufacturer" value="" required />
-            <label>Price</label>
-            <input type="text" name="price" value="" />
-            <input type="submit" name="submit_add_product" value="Submit" />
+        
+        <form class="form-inline" action="<?php echo URL; ?>products/addproduct" method="POST">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input class="form-control" type="text" name="name" value="" required />
+            </div>
+
+
+            <div class="form-group">
+                <label for="manufacturer">Manufacturer:</label>
+                <input class="form-control" type="text" name="manufacturer" value="" required />
+            </div>
+
+            <div class="form-group">
+                <label for="price">Price:</label>
+                <input class="form-control" type="text" name="price" value="" required />
+            </div>
+
+            <input class="btn btn-default" type="submit" name="submit_add_product" value="Submit" />
         </form>
-    </div>
+   
 </div>
